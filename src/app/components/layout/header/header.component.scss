@@ -1,0 +1,27 @@
+@import "../../../styles/variables.scss";
+
+.headerContainer {
+  background-color: $primary-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.headerText {
+  color: $off-white;
+  font-size: 20px;
+  transition: all 0.3s ease-in;
+}
+
+.headerText:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 21px;
+}
