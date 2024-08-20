@@ -24,9 +24,28 @@ export class AuthService {
       this.firebaseAuth,
       email,
       password
-    ).then((res) => updateProfile(res.user, { displayName: fullname }));
-    return from(promise);
+    )
+      .then((res) => {
+        return updateProfile(res.user, { displayName: fullname }).then(() => {
+          return res.user.getIdToken().then((token) => {
+            this.setToken(token);
+          });
+        });
+      })
+      .catch((error) => {
+        return Promise.reject(error);
+      });
+
+    return from(promise).pipe(
+      catchError((error) => {
+        console.error('Registration failed:', error);
+        return throwError(
+          () => new Error('Registration failed: ' + error.message)
+        );
+      })
+    );
   }
+
   login(email: string, password: string): Observable<void> {
     return from(
       signInWithEmailAndPassword(this.firebaseAuth, email, password)

@@ -2,15 +2,14 @@ import { Routes } from '@angular/router';
 import { LoginComponent } from './screens/login/login.component';
 import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
 import { HomeComponent } from './screens/home/home.component';
+import { RegisterComponent } from './screens/register/register.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
   {
     path: '',
     component: MainLayoutComponent,
-    children: [
-      { path: '', component: HomeComponent }, // Example route for a page with header and footer
-      // Add more routes here for pages with header and footer
-    ],
+    children: [{ path: '', component: HomeComponent }],
   },
 ];

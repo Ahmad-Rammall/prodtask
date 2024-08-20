@@ -1,0 +1,37 @@
+<div class="wrapper">
+  <div class="container">
+    <h1>Register</h1>
+    <form [formGroup]="registerForm">
+      <input
+        type="text"
+        formControlName="fullname"
+        class="input-field"
+        placeholder="Full Name"
+        required
+      />
+      <input
+        type="email"
+        formControlName="email"
+        class="input-field"
+        placeholder="Email"
+        required
+      />
+      <input
+        type="password"
+        class="input-field"
+        placeholder="Password"
+        required
+        formControlName="password"
+      />
+      <input
+        type="password"
+        class="input-field"
+        placeholder="Confirm Password"
+        required
+        formControlName="confirmPassword"
+      />
+      <div (click)="navigateToLogin()" class="loginBtn">Login</div>
+      <button type="button" class="btn" (click)="onSubmit()">Register</button>
+    </form>
+  </div>
+</div>
