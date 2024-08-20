@@ -1,11 +1,23 @@
 <div class="wrapper">
-    <div class="container">
-        <h1>Login</h1>
-        <form>
-            <input type="email" class="input-field" placeholder="Email" required>
-            <input type="password" class="input-field" placeholder="Password" required>
-            <button type="submit" class="btn">Login</button>
-            <a href="#" class="forgot-password">Forgot Password?</a>
-        </form>
-    </div>
+  <div class="container">
+    <h1>Login</h1>
+    <form [formGroup]="loginForm">
+      <input
+        type="email"
+        formControlName="email"
+        class="input-field"
+        placeholder="Email"
+        required
+      />
+      <input
+        type="password"
+        class="input-field"
+        placeholder="Password"
+        required
+        formControlName="password"
+      />
+      <a href="#" class="registerBtn">Register</a>
+      <button type="button" class="btn" (click)="onSubmit()">Login</button>
+    </form>
+  </div>
 </div>
