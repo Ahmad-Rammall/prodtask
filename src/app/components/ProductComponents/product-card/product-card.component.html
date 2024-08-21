@@ -3,18 +3,18 @@
     <img [src]="product.image" alt="product image" class="cardImg" />
   </div>
   <div class="contentContainer">
-    <h1>{{ truncateDescription(product.title, 40) }}</h1>
-    <p>{{ truncateDescription(product.description) }}</p>
-    <p-rating
-      [ngModel]="roundRate(product.rating.rate)"
-      [readonly]="true"
-      iconCancelClass="hidden"
-    />
-    <div class="buttonsContainer flex-row gap-3">
-      <button class="edit flex-row full-center gap-1">
-        <i class="pi pi-pencil"></i> Edit
-      </button>
-      <button class="delete"><i class="pi pi-trash"></i> Delete</button>
+    <h1>{{ product.title }}</h1>
+    <p class="price">${{ product.price }}</p>
+    <p class="description">{{ product.description }}</p>
+    <div class="flex-row justify-between align-center">
+      <div>
+        <p-rating
+          [ngModel]="roundRate(product.rating.rate)"
+          [readonly]="true"
+          iconCancelClass="hidden"
+        />
+      </div>
+      <p class="category">{{ product.category }}</p>
     </div>
   </div>
 </div>

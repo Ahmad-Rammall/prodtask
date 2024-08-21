@@ -1,4 +1,8 @@
 @import "../../../styles/variables.scss";
+
+$number_title_lines: 2;
+$number_desc_lines: 3;
+
 .cardContainer {
   border: 1px solid $text-color;
   border-radius: 10px;
@@ -16,6 +20,14 @@
 h1 {
   font-size: 20px;
   margin: 10px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: $number_title_lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-clamp: $number_title_lines;
+  line-height: 1.5em;
+  height: calc(1.5em * $number_title_lines);
+  min-height: calc(1.5em * $number_title_lines);
 }
 .imgContainer {
   height: 300px;
@@ -30,32 +42,34 @@ h1 {
   width: 100%;
   border-radius: 10px 10px 0 0;
 }
-.buttonsContainer {
-  align-items: center;
-  justify-content: center;
-  margin: 20px 0;
-}
 
-button {
+.price {
+  margin: 10px 0;
+  background-color: rgba($primary-color, 0.2);
+  width: fit-content;
   padding: 5px;
   border-radius: 5px;
-  width: 100px;
-  border: 0;
-  font-weight: 600;
-  color: $off-white;
-  font-size: 15px;
-  cursor: pointer;
-  transition: all 0.1s ease-in-out;
+  color: $text-color;
 }
 
-button:hover{
-    opacity: 80%;
-}
-
-.edit {
+.category {
   background-color: $primary-color;
+  width: fit-content;
+  padding: 5px;
+  border-radius: 5px;
+  color: $text-color;
+  font-size: 10px;
+  color: $off-white;
+  margin: 5px;
 }
 
-.delete {
-  background-color: $red-color;
+.description {
+  display: -webkit-box;
+  -webkit-line-clamp: $number_desc_lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-clamp: $number_desc_lines;
+  line-height: 1.5em;
+  height: calc(1.5em * $number_desc_lines);
+  min-height: calc(1.5em * $number_desc_lines);
 }

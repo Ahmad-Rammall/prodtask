@@ -14,13 +14,6 @@ import { FormsModule } from '@angular/forms';
 export class ProductCardComponent {
   @Input() product!: Product;
 
-  truncateDescription(description: string, maxLength: number = 100): string {
-    if (description.length > maxLength) {
-      return description.substring(0, maxLength) + '...';
-    }
-    return description;
-  }
-
   roundRate(rate: number): number {
     return Math.round(rate);
   }
