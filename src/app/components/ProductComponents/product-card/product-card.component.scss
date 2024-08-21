@@ -1,0 +1,61 @@
+@import "../../../styles/variables.scss";
+.cardContainer {
+  border: 1px solid $text-color;
+  border-radius: 10px;
+  width: 300px;
+  margin: 10px;
+}
+
+.contentContainer {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+h1 {
+  font-size: 20px;
+  margin: 10px 0;
+}
+.imgContainer {
+  height: 300px;
+  width: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: red;
+}
+.cardImg {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+}
+.buttonsContainer {
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+button {
+  padding: 5px;
+  border-radius: 5px;
+  width: 100px;
+  border: 0;
+  font-weight: 600;
+  color: $off-white;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+
+button:hover{
+    opacity: 80%;
+}
+
+.edit {
+  background-color: $primary-color;
+}
+
+.delete {
+  background-color: $red-color;
+}

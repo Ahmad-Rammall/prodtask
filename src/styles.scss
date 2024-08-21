@@ -1,4 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+@import "primeng/resources/themes/saga-blue/theme.css"; /* Replace with your desired theme */
+@import "primeng/resources/primeng.min.css";
+@import 'primeflex/primeflex.css';
+@import "primeicons/primeicons.css";
+@import './app/styles/variables.scss';
+
 * {
   padding: 0;
   margin: 0;
@@ -17,6 +22,11 @@
   gap: 2rem;
 }
 
+.gap-3 {
+  gap: 3rem;
+}
+
+
 .flex-row {
   display: flex;
   flex-direction: row;
@@ -27,7 +37,7 @@
   flex-direction: column;
 }
 
-.justify-bewteen {
+.justify-between {
   justify-content: space-between;
 }
 
@@ -35,7 +45,7 @@
   justify-content: center;
 }
 
-.align-center{
+.align-center {
   align-items: center;
 }
 
