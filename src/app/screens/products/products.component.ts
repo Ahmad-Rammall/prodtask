@@ -19,6 +19,9 @@ export class ProductsComponent {
     this.fakeStoreService.get().subscribe({
       next: (data) => {
         this.products = data;
+        console.log('====================================');
+        console.log(data);
+        console.log('====================================');
       },
       error: (error) => {
         console.log(error);
